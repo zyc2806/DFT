@@ -1,5 +1,5 @@
 # pymatgen_usage_Chinese
-
+xmuyichen@stu.xmu.edu.cn
 - **Side-note : as_ dict / from_ dict**
     
     Pymatgen的as_dict提供了一种以更好的方式保存你的工作的方法。
