@@ -5,3 +5,4 @@ Some scripts on DFT
 - **vib_correct_ts.py** Elimination of the second imaginary frequency of the transition state according to OUTCAR.
 - **droping.py** Generates multiple CAR files. Only applicable to the conversion of a loaded catalyst model to a substituted catalyst model. Before use, delete the coordinates of the originally loaded metal atoms in POSCAR or CONTCAR and subtract 1 from the number of atoms you wish to replace.
 - **droping_1.py** In addition to the functions of the previous script, this script can generate folders including INCAR, POTCAR, KPOINTS.The above files need to be present in the target folder.
+- **pymatgen_usage_Chinese.md** A simple manual for using pymatgen in Chinese.
