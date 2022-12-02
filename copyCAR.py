@@ -20,9 +20,9 @@ else:
 
 cp1_comm = "cp " + I_fold + "/POTCAR " + F_fold + "/POTCAR"
 cp2_comm = "cp " + I_fold + "/KPOINTS " + F_fold + "/KPOINTS"
-cp3_comm = "cp " + I_fold + "/INCAR " + F_fold + "/INCAR"
+cp3_comm = "cp " + I_fold + "/CONTCAR " + F_fold + "/POSCAR"
 
 os.popen(cp1_comm)
 os.popen(cp2_comm)
 os.popen(cp3_comm)
-print("INCAR, KPOINTS, POTCAR from the initial folder have been transferred to the final folder")
+print("CONTCAR, KPOINTS, POTCAR from the initial folder have been transferred to the final folder")
