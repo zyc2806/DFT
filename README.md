@@ -10,7 +10,7 @@ Some scripts on DFT
 - **que.py** Automatic job submission to the queue with the lowest number of currently waiting tasks for the XMU Fu_Lab Xiangan server.
 - **msta.py** This is a script that fits my own file naming conventions and input parameters to detect the calculation process of a task and to view the virtual frequency of a structure more easily.
 - **newm.py** For improving the accuracy of calculations and creating new calculation tasks.
-- **copyCAR.py** Use the command `copyCAR folder1 folder2` to transfer INCAR,KPOINT,POTCAR from `folder1` to `folder2`
+- **copyCAR.py** Use the command `copyCAR.py folder1 folder2` to transfer INCAR,KPOINT,POTCAR from `folder1` to `folder2`
 - **NEBm.py** Use the command `NEBm.py`,then type in the initial, final and NEB folder numbers respectively. This script moves the relevant files from the initial and final state folders to the NEB folder and automatically inserts points (4 points by default), checks the soundness of each structure and generates a 'movie.xyz' file for manual checking of the structure. Requires vaspkit, nebmake.pl, nebmovie.pl to be installed and given executable permissions.
 - **INsel.py** Select to import ICNAR parameter files for different tasks. Includes structural relaxation, frequency calculation, NEB method for calculating transition states, transition state structural refinement, DOS, STM.
 - **vibm.py** After fixing the atoms using vaspkit, the frequency calculation folder is created and the relevant parameter files are imported.
