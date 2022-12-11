@@ -13,7 +13,7 @@ with open('OUTCAR') as f_in:
         if 'f/i' in line:
             exwave_tem = wave_tem
             wave_tem = float(line.rstrip().split()[6])
-            if wave_tem > wave_num:  #获取次最大的虚频
+            if wave_tem > wave_num:  #最大的虚频
                 wave_num = exwave_tem
                 l_position = num + 2
 # ASE读POSCAR
@@ -23,7 +23,8 @@ num_atoms = len(model)
 #print(model_positions)
 
 # 获取虚频对应的OUTCAR部分
-vib_lines = lines[l_position:l_position + num_atoms]  #振动部分
+vib_lines = lines[l_position - num_atoms - 3:l_position - 3]  #次最大虚频的振动部分
+#vib_lines = lines[l_position:l_position + num_atoms]  #最大虚频的振动部分
 #print(vib_lines)
 vib_dis = []
 for line in vib_lines:
@@ -34,10 +35,10 @@ for line in vib_lines:
 vib_dis = np.array(vib_dis)  #将振动部分写到一个array中。
 
 # 微调结构
-new_positions = model_positions - vib_dis * 0.3
-# 0.4是微调的校正因子，即虚频对应振动位移的0.4，具体多大自己根据经验调。
+new_positions = model_positions + vib_dis * 0.4
+# 0.4是微调的校正因子，即虚频对应振动位移的0.4，具体多大自己根据经验调。（消除虚频+）
 model.positions = new_positions
 
 ###保存结构
-write('POSCAR_new-0.3', model,
+write('POSCAR_new', model,
       vasp5=True)  # POSCAR_new是微调后的结构，用于下一步的计算（别忘了把POSCAR_new改成POSCAR）。
